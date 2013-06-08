@@ -1,0 +1,89 @@
+<div class="row-fluid">
+<div class="span10">
+  <ul class="breadcrumb-beauty">
+    <li>
+      <a href="index-2.html"><span class="fs1" aria-hidden="true" data-icon="&#xe002;"></span> Post</a>
+    </li>
+    <li>
+      <a href="#">New Post</a>
+    </li>
+  </ul>
+  <br/>
+<div class="widget">
+  <div class="widget-header">
+    <div class="title">
+      <span class="fs1" aria-hidden="true" data-icon="&#xe023;"></span> Post information
+    </div>
+  </div>    
+  <div class="widget-body">
+    <%= form_for @post ,:html => {:class => 'form-horizontal form-bordered'}  do |f| %>
+      <% if @post.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluraize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+          <ul>
+          <% @post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+    <form class="form-horizontal no-margin well">
+      <h5 class="text-info">Post information</h5>
+      <hr>
+      <div class="control-group">
+         <%= f.label :technology, :class=>"control-label" %>
+        <div class="controls">         
+          <%= f.collection_select(:technology_id, Technology.all, :id, :name, :prompt=>"Select Technology")%>
+        </div>
+      </div>
+      
+      <div class="control-group">
+        <%= f.label :title , :class=>"control-label"%>
+        <div class="controls">          
+          <%= f.text_field :title ,:class=>"inputText editable editable-click" %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :description, :class=>"control-label" %>
+        <div class="controls">          
+          <%= f.text_area :description, rows:8 ,cols:20 ,:class=>"input-block-level no-margin" %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :source_link, :class=>"control-label" %>
+        <div class="controls">          
+          <%= f.text_field :source_link,:id=>"url",:class=>"inputText editable editable-click"  %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :code_sample, :class=>"control-label" %>
+        <div class="controls">          
+          <%= f.text_area :code_sample,:class=>"wysiwyg-container" ,:class => 'ckeditor'%>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :User_Name, :class=>"control-label" %>
+        <div class="controls">   
+          <input type="text" name="username" readonly = "true" class="inputText editable editable-click"  value="<%= current_user.first_name %>"  />     
+        </div>
+      </div>
+
+      <div class="form-actions no-margin">
+            <%= f.submit "Save" , :class=>"btn btn-info"%>
+            <%= link_to 'Back', :back, :class=>"btn" %>
+      </div>
+    </form>
+    <%end%>
+  </div>
+</div>
+</div> 
+</div>
+
+
+
+

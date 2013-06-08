@@ -1,0 +1,24 @@
+<div id="mainnav" class="hidden-phone hidden-tablet">
+  <ul>
+    <li class="active">      
+      <span class="current-arrow"></span>
+      <div class="icon">
+        <a>Home</a><%= link_to image_tag("/assets/home.png"), root_url%>  </a>
+      </div>       
+    </li>
+    <% if current_user.email == "info@techplus.com" %>  
+    <li class="active">
+      <span></span>
+      <div class="icon">
+         <a>Technology</a><%= link_to image_tag("/assets/technology.png"),technologies_path%>
+      </div>       
+    <%end%>
+    </li>
+    <li class="active">
+      <span></span>
+      <div class="icon">
+         <a>Post</a><%= link_to image_tag("/assets/post.png"), posts_path%>
+      </div>       
+    </li>    
+  </ul>
+</div>

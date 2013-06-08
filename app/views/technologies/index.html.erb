@@ -1,0 +1,92 @@
+ <%= form_for Technology.new do |f| %>
+  <div id="accSettings54" class="modal hide fade" tabindex="-4" role="dialog" aria-labelledby="myModalLabel4" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+        ×
+      </button>
+      <h4 id="myModalLabel4">
+        Technology Details
+      </h4>
+    </div>
+    <div class="modal-body">
+      <div class="row-fluid">  
+        <div class="span4">
+          <%= f.text_field :name , :placeholder => "Technology Name"%>
+          <%= f.submit "Save", :class=>"btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+<div class="row-fluid">
+  <div class="span12">
+    <div class="widget no-margin">
+      <div class="widget-header">
+        <div class="title">
+          <span class="fs1" aria-hidden="true" data-icon="&#xe14a;"></span> Dynamic Table
+        </div>
+      </div>
+      <br/>  
+
+      <div class= "span3 input-top-margin"><a href="#accSettings54" role="button" class ="btn btn-success btn-small hidden-phone" data-toggle="modal" data-original-title="">Add New Technology</a></div>
+      <div class="widget-body"><br/>
+        <div id="dt_example" class="example_alt_pagination">
+          <table class="table table-condensed table-striped table-hover table-bordered pull-left" id="data-table">    
+            <thead>
+              <tr>
+                <th style="width:80%">Title</th>                
+                <th style="width:20%">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @technologies.each do |technology| %> 
+                <tr class="gradeU">
+                  <td><%= technology.name %></td>          
+                <td> 
+                  <%= link_to 'Edit', edit_technology_path(technology),  :class => "btn btn-success btn-small hidden-phone" %>&nbsp;&nbsp;
+                  <%= link_to 'Show',technology,:class=>"btn btn-primary" %>&nbsp;&nbsp;
+                  <%= link_to 'Destroy',  technology, method: :delete, data: { confirm: 'Are you sure?' } ,  :class => "btn btn-danger btn-small hidden-phone"%>
+                </td>
+              </tr>    
+              <%end%>                    
+            </tbody>
+          </table>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- <h1>Listing technologies</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @technologies.each do |technology| %>
+  <tr>
+    <td><%= technology.name %></td>
+    <td><%#= link_to 'Show', technology %></td>
+    <td><%#= link_to 'Edit', edit_technology_path(technology) %></td>
+    <td><%#= link_to 'Destroy', technology, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%#= link_to 'New Technology', new_technology_path %>
+ -->

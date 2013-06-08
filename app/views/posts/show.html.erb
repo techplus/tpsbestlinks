@@ -1,0 +1,68 @@
+<div class="row-fluid">
+  <ul class="breadcrumb-beauty">
+    <li>
+      <a href="index-2.html"><span class="fs1" aria-hidden="true" data-icon="&#xe002;"></span> Post</a>
+    </li>
+    <li>
+      <a href="#">Show Post</a>
+    </li>
+  </ul>
+  <p id="notice"><%= notice %></p>
+   <div class="span6">    
+    <div class="widget">
+      <div class="widget-header">
+        <div class="title">
+          <span class="fs1" aria-hidden="true" data-icon="&#xe14b;"></span> Post Information
+        </div>
+      </div>
+      <div class="widget-body">
+        <h2 class="text-warning"><%= @post.title %></h2>
+        <h4 class="text-info"><%= @post.title %></h4>
+        <h4>Description : -  <%= @post.description %></h4>
+        <h4 class="message-heading">Source Link : - <%= @post.source_link %></h4>
+        <h4 class="message-heading">Sample Code : - <%= @post.code_sample %></h4>
+      </div>
+    </div>
+  </div>
+  
+  <div class="span4">
+    <div class="widget">
+      <div class="widget-header">
+        <div class="title">
+          <span class="fs1" aria-hidden="true" data-icon="&#xe14b;"></span> Post Information
+        </div>
+      </div>    
+      <div class="widget-body">
+        <ul class="tasks">
+          <li>
+            <img src="img/avatar-1.png" class="avatar" alt="Avatar">
+            <div class="message-date">
+              <h3 class="date text-info"><%= @post.created_at.strftime("%d %b,%Y") %></h3>
+
+            </div>
+            <div class="message-wrapper">
+              <h4 class="message-heading">Technology <br/> 
+                <% @technologies.each do |tech|%>
+                <% if @post.technology_id== tech.id %>
+                <%= tech.name%>
+                <%end%>
+                <%end%>
+              </h4>
+              <p class="message">
+                Posted by :
+                <% @users.each do |user|%>
+                  <% if @post.user_id== user.id %>
+                    <%= user.first_name%>
+                  <%end%>
+                <%end%>
+              </p>
+            </div>
+          </li>
+        </ul>
+       </div>
+    </div>
+  </div>
+</div>
+<div class= "span3 input-top-margin"><%= link_to 'New Post', new_post_path , :class => "btn btn-success btn-small hidden-phone" %></div><br/><br/>
+<%= link_to 'Edit', edit_post_path(@post), :class => "btn btn-success btn-small hidden-phone" %> 
+<%= link_to 'Back', posts_path,:class=>"btn btn-primary" %>

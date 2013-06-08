@@ -1,0 +1,35 @@
+<div class="row-fluid">
+  <ul class="breadcrumb-beauty">
+    <li>
+      <a href="index-2.html"><span class="fs1" aria-hidden="true" data-icon="&#xe002;"></span> Technology</a>
+    </li>
+    <li>
+      <a href="#">Show Technology</a>
+    </li>
+  </ul>
+  <p id="notice"><%= notice %></p>
+   <div class="span4">
+    <div class="widget">
+      <div class= "span3 input-top-margin"><%= link_to 'New Post', new_post_path , :class => "btn btn-success btn-small hidden-phone" %></div><br/><br/>
+      <div class="widget-header">
+        <div class="title">
+          <span class="fs1" aria-hidden="true" data-icon="&#xe14b;"></span> Post Information
+        </div>
+      </div>    
+      <div class="widget-body">
+        <ul class="tasks">
+          <li>
+            <div class="message-date">
+              <h3 class="date text-info"><%= @technology.name %></h3>
+            </div>
+          </li>
+        </ul>
+       </div>
+    </div>
+  </div>
+  <div>
+    <%= link_to 'Edit', edit_technology_path(@technology), :class => "btn btn-success btn-small hidden-phone" %><%= link_to 'Back', technologies_path, :class=>"btn btn-primary"  %>
+  </div>
+</div>
+
+

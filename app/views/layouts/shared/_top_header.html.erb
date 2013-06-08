@@ -1,0 +1,18 @@
+<header>
+  <a href="index-2.html" class="logo">TPS Best Practices</a>
+  <div id="mini-nav">
+    <ul class="hidden-phone">
+      <% if user_signed_in? %>
+      <li class="dropdown">
+        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+          <%= image_tag("/assets/user_profile.png")%>
+          <span><%= current_user.first_name %>&nbsp;</span>
+        </a>
+      </li>
+      <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+      <%else%>
+        <li><%= link_to "Sign in", new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</header>

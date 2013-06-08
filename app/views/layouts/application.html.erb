@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+  <!--[if lt IE 7]>
+    <html class="lt-ie9 lt-ie8 lt-ie7" lang="en">
+  <![endif]-->
+
+  <!--[if IE 7]>
+    <html class="lt-ie9 lt-ie8" lang="en">
+  <![endif]-->
+
+  <!--[if IE 8]>
+    <html class="lt-ie9" lang="en">
+  <![endif]-->
+
+  <!--[if gt IE 8]>
+    <!-->
+    <html lang="en">
+    <!--
+  <![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title>TPS Best Practices</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <meta name="author" content="Srinu Basava">
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
+    <meta name="description" content="Moon Light Admin Admin UI">
+    <meta name="keywords" content="Moon Light Admin, Admin UI, Admin Dashboard, Srinu Basava">
+    <script src="/assets/html5-trunk.js"></script>
+    <link href="/assets/style.css" rel="stylesheet">
+    <!--[if lte IE 7]>
+    <script src="/assets/icomoon-font/lte-ie7.js"></script>
+    <![endif]-->
+
+    <!-- bootstrap css -->
+    <link href="/assets/main.css" rel="stylesheet">
+    <link href="/assets/fullcalendar.css" rel="stylesheet">
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40571798-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </head>
+  <body>
+    <%= render "/layouts/shared/top_header"%>
+
+    <div class="container-fluid">
+      <%= render "/layouts/shared/nevigation_menu" %>
+      
+      <div class="dashboard-wrapper">
+        <div class="main-container">
+          <%= yield%>
+        </div>
+      </div>
+    </div>
+    <%= render "/layouts/shared/footer" %>
+      
+
+    <script src="assets/jquery.min.js"></script>
+    <script src="assets/bootstrap.js"></script>
+    <script src="assets/jquery-ui-1.8.23.custom.min.js"></script>
+
+    <!-- morris charts -->
+    <script src="assets/morris.js"></script>
+    <script src="assets/raphael-min.js"></script>
+
+    <!-- Flot charts -->
+    <script src="assets/jquery.flot.js"></script>
+    <script src="assets/jquery.flot.resize.min.js"></script>
+
+    <!-- Calendar Js -->
+    <script src="assets/fullcalendar.js"></script>
+
+    <!-- Tiny Scrollbar JS -->
+    <script src="assets/tiny-scrollbar.js"></script>
+
+    <!-- custom Js -->
+    <script src="assets/custom-index.js"></script>
+    <script src="assets/custom.js"></script>
+      
+  </body>
+
+<!-- Mirrored from srinu.me/omnms/moon-light/dark-version/ by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 06 Jun 2013 06:39:59 GMT -->
+</html>

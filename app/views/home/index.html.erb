@@ -1,0 +1,51 @@
+<div class="row-fluid">
+  <div class="span12">
+    <div class="widget">
+      <div class="widget-header">
+        <div class="title">
+          <span class="fs1" aria-hidden="true" data-icon="&#xe07d;"></span> Latest Updates
+        </div>        
+      </div>
+      <div class="widget-body">
+        <div id="scrollbar-three">
+          <div class="scrollbar">
+            <div class="track">
+              <div class="thumb">
+                <div class="end"></div>
+              </div>
+            </div>
+          </div>
+          <div class="viewport">
+            <div class="overview">
+              <ul class="imp-messages">
+                <li>
+                  <% @posts.each do |post|%>
+                  <div class="message-date">
+                    <%= link_to 'Show', post,:class=>"btn btn-danger" %><h3 class="date text-info"></h3>
+                  </div>
+                  <div class="message-wrapper">                    
+                    <h4 class="text-success"><%= post.title.capitalize%></h4>
+                    <% @technologies.each do |tech|%>
+                      <% if post.technology_id == tech.id%>
+                        <p class="message">
+                          Technology:- <%= tech.name%>&nbsp; Posted on :-  <%= tech.created_at.strftime("%d %b,%Y")%><br/>
+                            <% @user.each do |user|%>
+                              <%if post.user_id == user.id %>
+                                Posted by:- <%= user.first_name%>
+                              <%end%>
+                            <%end%>
+                        </p>
+                      <%end%>
+                    <%end%>
+                  </div>
+                  <br/>
+                  <%end%>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
