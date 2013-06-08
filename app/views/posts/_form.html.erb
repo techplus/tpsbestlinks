@@ -16,10 +16,11 @@
     </div>
   </div>    
   <div class="widget-body">
-    <%= form_for @post ,:html => {:class => 'form-horizontal form-bordered'}  do |f| %>
+    <%= form_for @post,:html => {:class => 'form-horizontal form-bordered'}  do |f| %>
       <% if @post.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluraize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+          <h2><%= pluralize(@post.errors.count, "error") %> prohibited this technology from being saved:</h2>
+
 
           <ul>
           <% @post.errors.full_messages.each do |msg| %>
