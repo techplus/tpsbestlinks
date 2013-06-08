@@ -1,4 +1,5 @@
 <div class="row-fluid">
+  <p id="notice"><%= notice %></p>
   <ul class="breadcrumb-beauty">
     <li>
       <a href="index-2.html"><span class="fs1" aria-hidden="true" data-icon="&#xe002;"></span> Technology</a>
@@ -7,29 +8,27 @@
       <a href="#">Show Technology</a>
     </li>
   </ul>
-  <p id="notice"><%= notice %></p>
-   <div class="span4">
-    <div class="widget">
-      <div class= "span3 input-top-margin"><%= link_to 'New Post', new_post_path , :class => "btn btn-success btn-small hidden-phone" %></div><br/><br/>
+  <br/>
+   <div class="span10">    
+    <div class="widget">      
       <div class="widget-header">
         <div class="title">
-          <span class="fs1" aria-hidden="true" data-icon="&#xe14b;"></span> Post Information
-        </div>
-      </div>    
+          <span class="fs1" aria-hidden="true" data-icon="&#xe14b;"></span> Technology Information
+        </div>        
+      </div>  
       <div class="widget-body">
         <ul class="tasks">
           <li>
-            <div class="message-date">
-              <h3 class="date text-info"><%= @technology.name %></h3>
-            </div>
+            <h4 class="date text-info"> Technology Name :- <%= @technology.name %></h4>
           </li>
         </ul>
        </div>
     </div>
+    <div>
+    <%= link_to 'New Technology', new_technology_path , :class => "btn btn-success" %>
+    <%= link_to 'Edit', edit_technology_path(@technology), :class => "btn btn-success" %>&nbsp;<%= link_to 'Back', technologies_path, :class=>"btn btn-primary"  %>
   </div>
-  <div>
-    <%= link_to 'Edit', edit_technology_path(@technology), :class => "btn btn-success btn-small hidden-phone" %><%= link_to 'Back', technologies_path, :class=>"btn btn-primary"  %>
-  </div>
+  
 </div>
 
 
